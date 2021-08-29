@@ -1,6 +1,6 @@
 # My Traefik reverse-proxy config
 
-# Setup
+## Setup
 
 Create docker network named `traefik`
 
@@ -17,8 +17,7 @@ Then paste the token to `.env`
 echo "CLOUDFLARE_DNS_API_TOKEN=<enter cloudflare token>" >> .env
 ```
 
-
-# Run
+## Run
 
 Simply execute 
 
@@ -26,7 +25,7 @@ Simply execute
 docker-compose up -d
 ```
 
-# Adding services
+## Adding services
 
 Each service that you want to expose need to be added to previously created network `traefik`.
 
