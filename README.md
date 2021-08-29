@@ -27,16 +27,14 @@ docker-compose up -d
 
 ## Adding services
 
-Each service that you want to expose need to be added to previously created network `traefik`.
+Each service that you want to expose needs to be added to previously created network `traefik`.
 
 ```yml
 # add service to the network
 services:
-  service:
+  <service-name>:
     networks:
       - traefik
-
-  
 
 # define the external network
 networks:
@@ -55,5 +53,5 @@ To expose the service under particular domain it needs to be defied by labels:
       - traefik.http.routers.<service-name>.tls.certresolver=myresolver
 
       # if there is more than one port exposed, you need to specify which one you want to forward to 80/443
-      - "traefik.http.services.ipfs-node.loadbalancer.server.port=8080"
+      - "traefik.http.services.<service-name>.loadbalancer.server.port=8080"
 ```
